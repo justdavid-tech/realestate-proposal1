@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Justdavidtech — Real Estate Website Proposal</title>
+  
+  <link rel="icon" type="image/png" href="https://realestate-proposal1.vercel.app/logoblack.jpg">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Justdavidtech — Real Estate Website Proposal" />
+  <meta name="description" content="Empowering your real estate brand with a high-performance, aesthetically stunning digital experience. Explore our premium real estate website solutions." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://realestate-proposal1.vercel.app/" />
+  <meta property="og:title" content="Justdavidtech — Real Estate Website Proposal" />
+  <meta property="og:description" content="Empowering your real estate brand with a high-performance, aesthetically stunning digital experience." />
+  <meta property="og:image" content="https://realestate-proposal1.vercel.app/logoblack.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://realestate-proposal1.vercel.app/" />
+  <meta property="twitter:title" content="Justdavidtech — Real Estate Website Proposal" />
+  <meta property="twitter:description" content="Empowering your real estate brand with a high-performance, aesthetically stunning digital experience." />
+  <meta property="twitter:image" content="https://realestate-proposal1.vercel.app/logoblack.jpg" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --dark: #0A0A0A;
+    --dark2: #111111;
+    --dark3: #1A1A1A;
+    --dark4: #222222;
+    --text: #E8E3DA;
+    --text-muted: #8A8478;
+    --border: rgba(201,168,76,0.18);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  /* ---- NOISE OVERLAY ---- */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* ---- NAVBAR ---- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-logo span { color: var(--text); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--dark) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 2px;
+    font-weight: 600 !important;
+    color: var(--dark);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .nav-cta:hover {
+    background: var(--gold-light) !important;
+    transform: translateY(-1px);
+    color: var(--dark) !important;
+  }
+
+  /* ---- HERO ---- */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 8rem 2rem 4rem;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 50% at 80% 80%, rgba(201,168,76,0.06) 0%, transparent 60%),
+      linear-gradient(180deg, #0A0A0A 0%, #111111 100%);
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    text-align: center;
+    max-width: 900px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid var(--border);
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    background: rgba(201,168,76,0.05);
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 560px;
+    margin: 0 auto 3rem;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--dark);
+    padding: 0.9rem 2.2rem;
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(201,168,76,0.3);
+  }
+
+  .btn-outline {
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.9rem 2.2rem;
+    border-radius: 2px;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201,168,76,0.05);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    margin-top: 5rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat-item {
+    text-align: center;
+  }
+
+  .hero-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .hero-stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+  }
+
+  /* ---- SECTION BASE ---- */
+  section { padding: 6rem 2rem; }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-left: 2px solid var(--gold);
+    padding-left: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .section-sub {
+    color: var(--text-muted);
+    max-width: 520px;
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    margin: 1.5rem 0;
+  }
+
+  /* ---- WHY CHOOSE ME ---- */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .why-card {
+    background: var(--dark2);
+    padding: 2.5rem;
+    transition: background 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.4s;
+  }
+
+  .why-card:hover::before { transform: scaleX(1); }
+  .why-card:hover { background: var(--dark3); }
+
+  .why-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .why-card h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.7rem;
+  }
+
+  .why-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  /* ---- FEATURES ---- */
+  .features-bg { background: var(--dark2); }
+
+  .features-tabs {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    margin-bottom: 3rem;
+    overflow-x: auto;
+  }
+
+  .tab-btn {
+    padding: 0.9rem 1.5rem;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+    border-right: 1px solid var(--border);
+  }
+
+  .tab-btn:last-child { border-right: none; }
+  .tab-btn.active, .tab-btn:hover {
+    background: rgba(201,168,76,0.08);
+    color: var(--gold);
+  }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: grid; }
+
+  .feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 1.2rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: var(--dark);
+    transition: border-color 0.3s, transform 0.2s;
+  }
+
+  .feature-item:hover {
+    border-color: rgba(201,168,76,0.4);
+    transform: translateY(-2px);
+  }
+
+  .feature-icon {
+    color: var(--gold);
+    font-size: 1rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .feature-item span {
+    font-size: 0.88rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  /* ---- PAGES SECTION ---- */
+  .pages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .page-card {
+    border: 1px solid var(--border);
+    padding: 1.8rem 1.5rem;
+    border-radius: 2px;
+    background: var(--dark2);
+    transition: all 0.3s;
+    cursor: default;
+    text-align: center;
+  }
+
+  .page-card:hover {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.05);
+    transform: translateY(-4px);
+  }
+
+  .page-card i {
+    font-size: 1.6rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .page-card h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+
+  .page-card p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* ---- PACKAGES ---- */
+  .packages-bg { background: var(--dark); }
+
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .pkg-card {
+    background: var(--dark2);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .pkg-card.featured {
+    background: #161208;
+  }
+
+  .pkg-card.featured::after {
+    content: 'MOST POPULAR';
+    position: absolute;
+    top: 1.2rem;
+    right: -2rem;
+    background: var(--gold);
+    color: var(--dark);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 0.25rem 2.5rem;
+    transform: rotate(45deg);
+  }
+
+  .pkg-tier {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .pkg-name {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+
+  .pkg-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+
+  .pkg-note {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pkg-features {
+    list-style: none;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .pkg-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  .pkg-features li i {
+    color: var(--gold);
+    font-size: 0.75rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  .pkg-features li.disabled {
+    opacity: 0.35;
+  }
+
+  .pkg-features li.disabled i {
+    color: var(--text-muted);
+  }
+
+  .pkg-btn {
+    display: block;
+    text-align: center;
+    padding: 0.85rem;
+    border: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    border-radius: 2px;
+  }
+
+  .pkg-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201,168,76,0.08);
+  }
+
+  .pkg-btn.gold-btn {
+    background: var(--gold);
+    color: var(--dark);
+    border-color: var(--gold);
+    font-weight: 600;
+  }
+
+  .pkg-btn.gold-btn:hover {
+    background: var(--gold-light);
+    border-color: var(--gold-light);
+    color: var(--dark);
+  }
+
+  /* ---- ABOUT DEV ---- */
+  .about-bg { background: var(--dark2); }
+
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .nav-links { display: none; }
+    .hero-stats { gap: 1.5rem; }
+  }
+
+  .about-avatar {
+    position: relative;
+  }
+
+  .about-avatar-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: var(--dark3);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-avatar-img::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 30%, rgba(201,168,76,0.15) 0%, transparent 70%);
+  }
+
+  .about-avatar-icon {
+    font-size: 6rem;
+    color: rgba(201,168,76,0.2);
+  }
+
+  .about-badge {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    background: var(--gold);
+    color: var(--dark);
+    padding: 1.2rem;
+    text-align: center;
+    border-radius: 2px;
+  }
+
+  .about-badge-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .about-badge-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  .about-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .skill-tag {
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    transition: all 0.3s;
+  }
+
+  .skill-tag:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* ---- PROCESS ---- */
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0;
+    position: relative;
+    counter-reset: step;
+  }
+
+  .process-step {
+    padding: 2.5rem;
+    border: 1px solid var(--border);
+    position: relative;
+    background: var(--dark2);
+    counter-increment: step;
+    transition: background 0.3s;
+  }
+
+  .process-step:hover { background: var(--dark3); }
+
+  .process-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    color: rgba(201,168,76,0.1);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .process-step h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .process-step p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ---- FOOTER ---- */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    padding: 4rem 2rem 2rem;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .footer-logo span { color: var(--text); }
+
+  .footer-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 300px;
+  }
+
+  .footer-col h4 {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col ul li {
+    margin-bottom: 0.6rem;
+  }
+
+  .footer-col ul li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+  }
+
+  .footer-col ul li a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-bottom p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .footer-social a {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+  }
+
+  .footer-social a:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* ---- WHATSAPP FLOAT ---- */
+  .wa-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    background: #25D366;
+    color: white;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-shadow: 0 8px 30px rgba(37,211,102,0.4);
+    transition: all 0.3s;
+    animation: waPulse 2.5s infinite;
+  }
+
+  .wa-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 40px rgba(37,211,102,0.5);
+  }
+
+  @keyframes waPulse {
+    0%, 100% { box-shadow: 0 8px 30px rgba(37,211,102,0.4); }
+    50% { box-shadow: 0 8px 50px rgba(37,211,102,0.7); }
+  }
+
+  /* ---- SCROLL ANIMATIONS ---- */
+  [data-aos] { will-change: transform, opacity; }
+
+  /* ---- GOLD LINE ACCENT ---- */
+  .gold-line {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0;
+    opacity: 0.3;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .admin-card {
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    background: var(--dark);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .admin-card:hover {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.04);
+    transform: translateY(-3px);
+  }
+
+  .admin-card i {
+    color: var(--gold);
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+
+  .admin-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .admin-card p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/2349039977439" target="_blank" class="wa-float" title="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-logo">Justdavid<span>tech</span></div>
+  <ul class="nav-links">
+    <li><a href="#why">Why Me</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#pages">Pages</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <a href="https://wa.me/2349039977439" target="_blank" class="nav-cta">Let's Talk</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge" data-aos="fade-down" data-aos-delay="100">
+      <i class="fas fa-star" style="font-size:0.6rem"></i>
+      Real Estate Website Proposal
+    </div>
+    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+      Your Vision.<br>
+      <em>Beautifully Built.</em>
+    </h1>
+    <p class="hero-sub" data-aos="fade-up" data-aos-delay="350">
+      A complete, high-converting real estate platform designed to attract buyers, capture leads, and grow your business online. Built by Justdavidtech.
+    </p>
+    <div class="hero-btns" data-aos="fade-up" data-aos-delay="450">
+      <a href="https://wa.me/2349039977439?text=Hi%20David%2C%20I%20want%20to%20discuss%20the%20real%20estate%20website" target="_blank" class="btn-primary">
+        <i class="fab fa-whatsapp"></i> Discuss This Project
+      </a>
+      <a href="#packages" class="btn-outline">
+        <i class="fas fa-box"></i> View Packages
+      </a>
+    </div>
+    <div class="hero-stats" data-aos="fade-up" data-aos-delay="550">
+      <div class="hero-stat-item">
+        <div class="hero-stat-num">15+</div>
+        <div class="hero-stat-label">Pages Delivered</div>
+      </div>
+      <div class="hero-stat-item" style="border-left:1px solid var(--border);border-right:1px solid var(--border);padding:0 3rem">
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-label">Mobile Ready</div>
+      </div>
+      <div class="hero-stat-item">
+        <div class="hero-stat-num">∞</div>
+        <div class="hero-stat-label">Listings Support</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-line"></div>
+
+<!-- WHY CHOOSE ME -->
+<section id="why">
+  <div class="container">
+    <div data-aos="fade-right">
+      <span class="section-label">Why Justdavidtech</span>
+      <h2 class="section-title">Built Different.<br>Results Driven.</h2>
+      <div class="divider"></div>
+      <p class="section-sub">Every decision in this build is made with your buyer in mind from first click to submitted inquiry.</p>
+    </div>
+
+    <div class="why-grid" style="margin-top:3rem">
+      <div class="why-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="why-icon"><i class="fas fa-bullseye"></i></div>
+        <h3>Conversion First</h3>
+        <p>Every page is structured to move visitors from browsing to booking with strategic CTAs, inquiry forms, and WhatsApp integrations baked in.</p>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="why-icon"><i class="fas fa-mobile-alt"></i></div>
+        <h3>Fully Responsive</h3>
+        <p>Your site will look stunning on every screen mobile, tablet, and desktop so you never miss a lead regardless of device.</p>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="why-icon"><i class="fas fa-bolt"></i></div>
+        <h3>Fast & SEO Ready</h3>
+        <p>Optimized page speed and clean structure ensure Google can find you and buyers don't bounce before they see your listings.</p>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Admin Dashboard</h3>
+        <p>A powerful backend panel so you can add, edit, and delete properties, blog posts, agents, and inquiries no coding needed.</p>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="why-icon"><i class="fas fa-comments"></i></div>
+        <h3>WhatsApp Integrated</h3>
+        <p>Every property listing, agent card, and CTA button connects directly to WhatsApp the #1 way Nigerians close deals.</p>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="why-icon"><i class="fas fa-headset"></i></div>
+        <h3>Ongoing Support</h3>
+        <p>Post-delivery support included. You'll never be stranded. I'm always a WhatsApp message away when you need updates or fixes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-line"></div>
+
+<!-- FEATURES -->
+<section id="features" class="features-bg">
+  <div class="container">
+    <div data-aos="fade-right">
+      <span class="section-label">What's Included</span>
+      <h2 class="section-title">Every Feature<br><em>You Need to Win.</em></h2>
+      <div class="divider"></div>
+      <p class="section-sub">A breakdown of every section, tool, and experience your website will have organised by page.</p>
+    </div>
+
+    <div style="margin-top:3rem">
+      <div class="features-tabs" data-aos="fade-up">
+        <button class="tab-btn active" onclick="showTab('homepage')">Homepage</button>
+        <button class="tab-btn" onclick="showTab('properties')">Properties</button>
+        <button class="tab-btn" onclick="showTab('details')">Property Detail</button>
+        <button class="tab-btn" onclick="showTab('agents')">Agents</button>
+        <button class="tab-btn" onclick="showTab('admin')">Admin Panel</button>
+        <button class="tab-btn" onclick="showTab('extras')">Premium Extras</button>
+      </div>
+
+      <!-- Homepage -->
+      <div id="tab-homepage" class="tab-content active feature-list" data-aos="fade-up">
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Hero section with large property image/video background</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Smart property search bar (location, type, price, bedrooms)</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Featured properties grid with images, price & details</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Property category section (Houses, Apartments, Villas, Land…)</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Featured locations (Abuja, Lagos, PH, Dubai, London)</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>About the company section with CTA</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Why Choose Us trust-building section</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Latest properties grid (newest listings)</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Our Agents section with photos, contacts</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Client testimonials with star ratings</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Blog / Real Estate Insights preview</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Lead generation Call-to-Action section</span></div>
+      </div>
+
+      <!-- Properties -->
+      <div id="tab-properties" class="tab-content feature-list" data-aos="fade-up">
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Full property listings page with card grid layout</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Advanced filter bar (location, type, price, beds, baths, status)</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Property cards with image, price, title, address, beds, baths, area</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Status badges: For Sale, For Rent, Sold</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Pagination / infinite scroll</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Sort by price, newest, oldest</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Projects / Developments page (estates, new builds)</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Project cards with gallery, price range, completion date</span></div>
+      </div>
+
+      <!-- Property Detail -->
+      <div id="tab-details" class="tab-content feature-list" data-aos="fade-up">
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Full-screen property image gallery / slider</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Property header with title, price, address, status badge</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Overview stats (beds, baths, garage, area, year built)</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Detailed property description</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Features & Amenities (pool, gym, parking, garden…)</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Embedded Google Map showing property location</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Agent info panel with WhatsApp quick-connect button</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Lead inquiry form (name, email, phone, message, visit scheduler)</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Similar properties carousel at bottom</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Floor plans section (optional)</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Property video embed (optional)</span></div>
+      </div>
+
+      <!-- Agents -->
+      <div id="tab-agents" class="tab-content feature-list" data-aos="fade-up">
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Agents listing page with photo cards</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Each agent card: photo, name, role, phone, email, listings count</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Individual agent profile page</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>WhatsApp direct message button on every agent</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>About page with company story, mission, vision</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Achievements stats (properties sold, years, happy clients)</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Full blog with article cards (title, image, excerpt, date)</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Individual blog article page with social share</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Contact page with form, map, address, office hours</span></div>
+      </div>
+
+      <!-- Admin -->
+      <div id="tab-admin" class="tab-content feature-list" data-aos="fade-up">
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Secure admin login portal</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Dashboard overview (total listings, sold, inquiries, agents)</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Add / edit / delete properties with image uploads</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Mark properties as Sold / Rented / Available</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Manage agents (add, edit, remove)</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Blog manager (create, edit, publish, draft)</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Inquiries inbox — see all form submissions</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Project / Development manager</span></div>
+      </div>
+
+      <!-- Extras -->
+      <div id="tab-extras" class="tab-content feature-list" data-aos="fade-up">
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Property comparison tool (side-by-side)</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>360° virtual tours integration</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>WhatsApp floating chat button (persistent)</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Property alert / notification system</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Map-based property search</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Saved / favourited properties (user accounts)</span></div>
+        <div class="feature-item"><i class="fas fa-check feature-icon"></i><span>Currency toggle (NGN / USD / GBP)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-line"></div>
+
+<!-- PAGES DELIVERED -->
+<section id="pages">
+  <div class="container">
+    <div data-aos="fade-right">
+      <span class="section-label">Pages Included</span>
+      <h2 class="section-title">Every Page.<br><em>Purposefully Designed.</em></h2>
+      <div class="divider"></div>
+      <p class="section-sub">Here's every page your real estate website will have from public-facing to admin backend.</p>
+    </div>
+
+    <div class="pages-grid" style="margin-top:3rem">
+      <div class="page-card" data-aos="fade-up" data-aos-delay="0">
+        <i class="fas fa-home"></i>
+        <h4>Home</h4>
+        <p>Hero, search, categories, featured listings, testimonials</p>
+      </div>
+      <div class="page-card" data-aos="fade-up" data-aos-delay="50">
+        <i class="fas fa-building"></i>
+        <h4>Properties</h4>
+        <p>Full listings with filters, search and sort</p>
+      </div>
+      <div class="page-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-door-open"></i>
+        <h4>Property Detail</h4>
+        <p>Gallery, overview, amenities, agent, inquiry form</p>
+      </div>
+      <div class="page-card" data-aos="fade-up" data-aos-delay="150">
+        <i class="fas fa-city"></i>
+        <h4>Projects</h4>
+        <p>New developments, estates, off-plan properties</p>
+      </div>
+      <div class="page-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-user-tie"></i>
+        <h4>Agents</h4>
+        <p>Team directory with profiles and direct contacts</p>
+      </div>
+      <div class="page-card" data-aos="fade-up" data-aos-delay="250">
+        <i class="fas fa-info-circle"></i>
+        <h4>About</h4>
+        <p>Company story, mission, vision, achievements</p>
+      </div>
+      <div class="page-card" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-newspaper"></i>
+        <h4>Blog</h4>
+        <p>Real estate tips, guides, and market insights</p>
+      </div>
+      <div class="page-card" data-aos="fade-up" data-aos-delay="350">
+        <i class="fas fa-envelope"></i>
+        <h4>Contact</h4>
+        <p>Form, map, address, phone, office hours</p>
+      </div>
+      <div class="page-card" data-aos="fade-up" data-aos-delay="400" style="border-color:rgba(201,168,76,0.3);background:rgba(201,168,76,0.04)">
+        <i class="fas fa-tachometer-alt"></i>
+        <h4>Admin Dashboard</h4>
+        <p>Full backend to manage all content</p>
+      </div>
+    </div>
+
+    <!-- Admin features -->
+    <div style="margin-top:3rem" data-aos="fade-up">
+      <p class="section-label" style="margin-bottom:1.5rem">Admin Modules</p>
+      <div class="admin-grid">
+        <div class="admin-card">
+          <i class="fas fa-chart-bar"></i>
+          <h4>Dashboard Overview</h4>
+          <p>Live stats — total listings, sold, available, inquiries count</p>
+        </div>
+        <div class="admin-card">
+          <i class="fas fa-plus-square"></i>
+          <h4>Properties Manager</h4>
+          <p>Add, edit, delete, upload images, mark as sold</p>
+        </div>
+        <div class="admin-card">
+          <i class="fas fa-pen-nib"></i>
+          <h4>Blog Manager</h4>
+          <p>Create, edit, draft, and publish blog articles</p>
+        </div>
+        <div class="admin-card">
+          <i class="fas fa-inbox"></i>
+          <h4>Inquiries Inbox</h4>
+          <p>All lead form submissions in one place</p>
+        </div>
+        <div class="admin-card">
+          <i class="fas fa-project-diagram"></i>
+          <h4>Projects Manager</h4>
+          <p>Manage developments, estates, and off-plan units</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-line"></div>
+
+<!-- PACKAGES -->
+<section id="packages" class="packages-bg">
+  <div class="container" style="text-align:center">
+    <div data-aos="fade-up">
+      <span class="section-label">Investment Plans</span>
+      <h2 class="section-title" style="margin:0 auto">Choose Your<br><em>Perfect Package.</em></h2>
+      <div class="divider" style="margin:1.5rem auto"></div>
+      <p class="section-sub" style="margin:0 auto">All packages include mobile responsiveness, WhatsApp integration, and post-delivery support. Click any plan to discuss on WhatsApp.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:3rem;padding:0 2rem">
+    <div class="packages-grid">
+
+      <!-- Basic -->
+      <div class="pkg-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="pkg-tier">01 — Entry</div>
+        <div class="pkg-name">Basic</div>
+        <div class="pkg-price">₦350k</div>
+        <div class="pkg-note">Starting from Final price after brief</div>
+        <ul class="pkg-features">
+          <li><i class="fas fa-check"></i> Homepage (all sections)</li>
+          <li><i class="fas fa-check"></i> Properties listing page</li>
+          <li><i class="fas fa-check"></i> Property detail page</li>
+          <li><i class="fas fa-check"></i> Contact page with form</li>
+          <li><i class="fas fa-check"></i> WhatsApp integration</li>
+          <li><i class="fas fa-check"></i> Mobile responsive</li>
+          <li><i class="fas fa-check"></i> About page</li>
+          <li class="disabled"><i class="fas fa-times"></i> Admin dashboard</li>
+          <li class="disabled"><i class="fas fa-times"></i> Blog / Agents pages</li>
+          <li class="disabled"><i class="fas fa-times"></i> Advanced filters</li>
+          <li class="disabled"><i class="fas fa-times"></i> Projects page</li>
+        </ul>
+        <a href="https://wa.me/2349039977439?text=Hi%20David%2C%20I'm%20interested%20in%20the%20Basic%20real%20estate%20package" target="_blank" class="pkg-btn">Get Basic Package</a>
+      </div>
+
+      <!-- Standard -->
+      <div class="pkg-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="pkg-tier">02 — Standard</div>
+        <div class="pkg-name">Standard</div>
+        <div class="pkg-price">₦500k</div>
+        <div class="pkg-note">Starting from Final price after brief</div>
+        <ul class="pkg-features">
+          <li><i class="fas fa-check"></i> Everything in Basic</li>
+          <li><i class="fas fa-check"></i> Blog page + articles</li>
+          <li><i class="fas fa-check"></i> Agents listing page</li>
+          <li><i class="fas fa-check"></i> Projects / Developments page</li>
+          <li><i class="fas fa-check"></i> Advanced property filters</li>
+          <li><i class="fas fa-check"></i> Google Maps integration</li>
+          <li><i class="fas fa-check"></i> Basic admin dashboard</li>
+          <li><i class="fas fa-check"></i> SEO optimization</li>
+          <li class="disabled"><i class="fas fa-times"></i> Mortgage calculator</li>
+          <li class="disabled"><i class="fas fa-times"></i> Property comparison</li>
+          <li class="disabled"><i class="fas fa-times"></i> Virtual tours</li>
+        </ul>
+        <a href="https://wa.me/2349039977439?text=Hi%20David%2C%20I'm%20interested%20in%20the%20Standard%20real%20estate%20package" target="_blank" class="pkg-btn">Get Standard Package</a>
+      </div>
+
+      <!-- Premium (featured) -->
+      <div class="pkg-card featured" data-aos="fade-up" data-aos-delay="200">
+        <div class="pkg-tier">03 — Recommended</div>
+        <div class="pkg-name">Premium</div>
+        <div class="pkg-price">₦750k</div>
+        <div class="pkg-note">Starting from Final price after brief</div>
+        <ul class="pkg-features">
+          <li><i class="fas fa-check"></i> Everything in Standard</li>
+          <li><i class="fas fa-check"></i> Full admin dashboard</li>
+          <li><i class="fas fa-check"></i> Mortgage calculator</li>
+          <li><i class="fas fa-check"></i> Property comparison tool</li>
+          <li><i class="fas fa-check"></i> Inquiry management inbox</li>
+          <li><i class="fas fa-check"></i> Image gallery with lightbox</li>
+          <li><i class="fas fa-check"></i> Property alert system</li>
+          <li><i class="fas fa-check"></i> WhatsApp floating chat</li>
+          <li><i class="fas fa-check"></i> Speed & performance tuned</li>
+          <li class="disabled"><i class="fas fa-times"></i> Virtual tours</li>
+          <li class="disabled"><i class="fas fa-times"></i> User accounts / saved listings</li>
+        </ul>
+        <a href="https://wa.me/2349039977439?text=Hi%20David%2C%20I'm%20interested%20in%20the%20Premium%20real%20estate%20package" target="_blank" class="pkg-btn gold-btn">Get Premium Package</a>
+      </div>
+
+      <!-- Gold -->
+      <div class="pkg-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="pkg-tier">04 — Elite</div>
+        <div class="pkg-name">Gold</div>
+        <div class="pkg-price">₦800k+</div>
+        <div class="pkg-note">Custom quote Let's discuss your vision</div>
+        <ul class="pkg-features">
+          <li><i class="fas fa-check"></i> Everything in Premium</li>
+          <li><i class="fas fa-check"></i> 360° Virtual tours</li>
+          <li><i class="fas fa-check"></i> User accounts + saved listings</li>
+          <li><i class="fas fa-check"></i> Map-based property search</li>
+          <li><i class="fas fa-check"></i> Currency toggle (NGN/USD/GBP)</li>
+          <li><i class="fas fa-check"></i> Email notification system</li>
+          <li><i class="fas fa-check"></i> Custom branding & design system</li>
+          <li><i class="fas fa-check"></i> Priority support (3 months)</li>
+          <li><i class="fas fa-check"></i> Video property tours</li>
+          <li><i class="fas fa-check"></i> Advanced analytics integration</li>
+          <li><i class="fas fa-check"></i> Full handover + training session</li>
+        </ul>
+        <a href="https://wa.me/2349039977439?text=Hi%20David%2C%20I'm%20interested%20in%20the%20Gold%20real%20estate%20package" target="_blank" class="pkg-btn">Get Gold Package</a>
+      </div>
+
+    </div>
+ <p style="text-align:center;margin-top:2rem;font-size:0.82rem;color:var(--text-muted)" data-aos="fade-up">
+      Excluding Maintenance Fees.
+    </p>
+    <p style="text-align:center;margin-top:2rem;font-size:0.82rem;color:var(--text-muted)" data-aos="fade-up">
+      Not sure which plan fits? <a href="https://wa.me/2349039977439?text=Hi%20David%2C%20I%20need%20help%20choosing%20a%20package" target="_blank" style="color:var(--gold);text-decoration:none">Chat with me on WhatsApp</a> and we'll figure it out together.
+    </p>
+  </div>
+</section>
+
+<div class="gold-line"></div>
+
+<!-- PROCESS -->
+<section>
+  <div class="container">
+    <div data-aos="fade-right">
+      <span class="section-label">How We Work</span>
+      <h2 class="section-title">From Brief to<br><em>Launch in Weeks.</em></h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="process-steps" style="margin-top:3rem">
+      <div class="process-step" data-aos="fade-up" data-aos-delay="0">
+        <div class="process-num">01</div>
+        <h3>Discovery Call</h3>
+        <p>We discuss your brand, goals, target audience, and the specific features you need.</p>
+      </div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+        <div class="process-num">02</div>
+        <h3>Design & Approval</h3>
+        <p>I create the design concept and share for your review and feedback before development.</p>
+      </div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+        <div class="process-num">03</div>
+        <h3>Development</h3>
+        <p>Full build frontend, backend, admin panel, and all integrations completed.</p>
+      </div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+        <div class="process-num">04</div>
+        <h3>Launch & Handover</h3>
+        <p>Site goes live. You get full access, training, and ongoing support to keep things running.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-line"></div>
+
+<!-- ABOUT DEVELOPER -->
+<section id="about" class="about-bg">
+  <div class="about-inner">
+    <div data-aos="fade-right">
+      <div class="about-avatar-img">
+        <img src="/me-color.jpg" alt="Justdavidtech" style="width:100%;height:auto">
+        <div class="about-badge">
+          <div class="about-badge-num">5+</div>
+          <span class="about-badge-label">Years Building</span>
+        </div>
+      </div>
+    </div>
+
+    <div data-aos="fade-left">
+      <span class="section-label">About The Developer</span>
+      <h2 class="section-title">Hi, I'm David.<br><em>I Build Websites<br>That Close Deals.</em></h2>
+      <div class="divider"></div>
+      <p style="color:var(--text-muted);line-height:1.8;font-size:0.95rem;margin-bottom:1.2rem">
+        I'm Justdavidtech a full-stack web developer specialising in real estate, business, and e-commerce platforms. I don't just build websites; I build digital tools that generate leads and grow businesses.
+      </p>
+      <p style="color:var(--text-muted);line-height:1.8;font-size:0.95rem;margin-bottom:2rem">
+        Every project I take on is treated with the same care I'd give my own business. Clean code, beautiful design, and results that actually matter to you.
+      </p>
+      <div class="about-skills">
+        <span class="skill-tag">React / Next.js</span>
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">UI/UX Design</span>
+        <span class="skill-tag">MongoDB</span>
+        <span class="skill-tag">WhatsApp API</span>
+        <span class="skill-tag">SEO</span>
+        <span class="skill-tag">Google Maps API</span>
+        <span class="skill-tag">Admin Dashboards</span>
+      </div>
+      <div style="margin-top:2rem">
+        <a href="https://wa.me/2349039977439?text=Hi%20David%2C%20I%20want%20to%20work%20with%20you" target="_blank" class="btn-primary">
+          <i class="fab fa-whatsapp"></i> Let's Work Together
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-line"></div>
+
+<!-- CTA BAND -->
+<section style="padding:5rem 2rem;background:linear-gradient(135deg,#0F0C00,#1A1400,#0A0A0A);text-align:center">
+  <div class="container">
+    <div data-aos="zoom-in">
+      <span class="section-label" style="display:block;text-align:center;border-left:none;padding-left:0;border-bottom:1px solid var(--border);padding-bottom:0.8rem;display:inline-block">Ready to Build?</span>
+      <h2 class="section-title" style="font-size:clamp(2.5rem,6vw,4.5rem);margin:1.5rem auto">
+        Let's Turn Your Vision<br>Into <em>Your Best Investment.</em>
+      </h2>
+      <p style="color:var(--text-muted);margin:1rem auto 2.5rem;max-width:480px;line-height:1.7;font-size:0.95rem">
+        Click below to start the conversation. No commitments just a friendly chat about what you need.
+      </p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="https://wa.me/2349039977439?text=Hi%20David%2C%20I%20want%20to%20discuss%20my%20real%20estate%20website" target="_blank" class="btn-primary" style="font-size:1rem;padding:1rem 2.5rem">
+          <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+        </a>
+        <a href="#packages" class="btn-outline" style="font-size:1rem;padding:1rem 2.5rem">
+          View Packages
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Justdavid<span>tech</span></div>
+      <p class="footer-desc">Building high-converting real estate websites that help Nigerian property businesses grow online. Clean code. Beautiful design. Real results.</p>
+      <div style="margin-top:1.5rem">
+        <a href="https://wa.me/2349039977439" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;color:var(--gold);text-decoration:none;font-size:0.85rem">
+          <i class="fab fa-whatsapp"></i> +234 903 997 7439
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Packages</h4>
+      <ul>
+        <li><a href="https://wa.me/2349039977439?text=Basic%20Package" target="_blank">Basic</a></li>
+        <li><a href="https://wa.me/2349039977439?text=Standard%20Package" target="_blank">Standard</a></li>
+        <li><a href="https://wa.me/2349039977439?text=Premium%20Package" target="_blank">Premium</a></li>
+        <li><a href="https://wa.me/2349039977439?text=Gold%20Package" target="_blank">Gold</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#why">Why Choose Me</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pages">Pages</a></li>
+        <li><a href="#about">About David</a></li>
+        <li><a href="https://wa.me/2349039977439" target="_blank">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Justdavidtech. All rights reserved.</p>
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://wa.me/2349039977439" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Init AOS
+  AOS.init({
+    duration: 700,
+    once: true,
+    easing: 'ease-out-cubic',
+    offset: 60
+  });
+
+  // Tab switching
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + tabId).classList.add('active');
+    event.target.classList.add('active');
+  }
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+      nav.style.padding = '0.8rem 2rem';
+      nav.style.background = 'rgba(10,10,10,0.97)';
+    } else {
+      nav.style.padding = '1.2rem 2rem';
+      nav.style.background = 'rgba(10,10,10,0.85)';
+    }
+  });
+
+  // Animate number counters in hero
+  function animateCount(el, target, suffix) {
+    let count = 0;
+    const inc = target / 60;
+    const timer = setInterval(() => {
+      count += inc;
+      if (count >= target) {
+        el.textContent = target + suffix;
+        clearInterval(timer);
+      } else {
+        el.textContent = Math.floor(count) + suffix;
+      }
+    }, 20);
+  }
+
+  // Intersection observer for counter animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const nums = e.target.querySelectorAll('.hero-stat-num');
+        nums[0] && animateCount(nums[0], 15, '+');
+        nums[1] && animateCount(nums[1], 100, '%');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const statsEl = document.querySelector('.hero-stats');
+  if (statsEl) observer.observe(statsEl);
+</script>
+</body>
+</html>
