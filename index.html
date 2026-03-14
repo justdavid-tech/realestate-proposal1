@@ -153,6 +153,96 @@
       color: var(--dark) !important;
     }
 
+    /* ---- MOBILE TOGGLE ---- */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      width: 24px;
+      height: 20px;
+      z-index: 200;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--gold);
+      position: absolute;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+
+    .nav-toggle span:nth-child(1) {
+      top: 0;
+    }
+
+    .nav-toggle span:nth-child(2) {
+      top: 9px;
+    }
+
+    .nav-toggle span:nth-child(3) {
+      top: 18px;
+    }
+
+    .nav-toggle.active span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+
+    @media (max-width: 1024px) {
+      .nav-links {
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        height: 100vh;
+        background: var(--dark);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        transition: transform 0.4s ease, visibility 0.4s;
+        z-index: 150;
+        border-left: 1px solid var(--border);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        transform: translateX(100%);
+        visibility: hidden;
+      }
+
+      .nav-links.active {
+        transform: translateX(0);
+        visibility: visible;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      /* Or move inside menu */
+      .nav-links .nav-cta {
+        display: block;
+        margin-top: 1rem;
+      }
+    }
+
     /* ---- HERO ---- */
     .hero {
       min-height: 100vh;
@@ -683,10 +773,6 @@
         gap: 2.5rem;
       }
 
-      .nav-links {
-        display: none;
-      }
-
       .hero-stats {
         gap: 1.5rem;
       }
@@ -1197,13 +1283,22 @@
   <!-- NAVBAR -->
   <nav>
     <div class="nav-logo">Mavrelle<span>tech</span></div>
-    <ul class="nav-links">
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
       <li><a href="#why">Why Me</a></li>
       <li><a href="#features">Features</a></li>
       <li><a href="#pages">Pages</a></li>
       <li><a href="#portfolio">Our Work</a></li>
       <li><a href="/designs.html">Explore Design </a></li>
+      <!-- <li class="mob-only"><a href="https://wa.me/2349039977439" target="_blank" class="nav-cta">Let's Talk</a></li> -->
     </ul>
+
     <a href="https://wa.me/2349039977439" target="_blank" class="nav-cta">Let's Talk</a>
   </nav>
 
@@ -1806,125 +1901,119 @@
       <div class="portfolio-grid" data-aos="fade-up" data-aos-delay="100">
 
         <!-- Portfolio Card 1 -->
- <div class="portfolio-card" onclick="window.open('https://beautysalon-taupe.vercel.app/')">
-  <div class="portfolio-img-wrap">
-    <img src="/beautysalon.png"
-         data-title="Beauty Salon"
-         data-cat="Web Application"
-         data-url="https://beautysalon-taupe.vercel.app/"
-         alt="Arete Brand Identity"
-         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="overlay">
-      <i class="fas fa-external-link-alt"></i>
-      <span style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;margin-top:0.4rem;color:var(--gold)">View Site</span>
-    </div>
-  </div>
-  <div class="portfolio-info">
-    <div class="cat">Web Application</div>
-    <h4>Beauty Salon</h4>
-  </div>
-</div>
+        <div class="portfolio-card" onclick="window.open('https://beautysalon-taupe.vercel.app/')">
+          <div class="portfolio-img-wrap">
+            <img src="/beautysalon.png" data-title="Beauty Salon" data-cat="Web Application"
+              data-url="https://beautysalon-taupe.vercel.app/" alt="Arete Brand Identity"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="overlay">
+              <i class="fas fa-external-link-alt"></i>
+              <span
+                style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;margin-top:0.4rem;color:var(--gold)">View
+                Site</span>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <div class="cat">Web Application</div>
+            <h4>Beauty Salon</h4>
+          </div>
+        </div>
 
         <!-- Portfolio Card 2 -->
-       <div class="portfolio-card" onclick="window.open('https://luxfurnitures.vercel.app/')">
-  <div class="portfolio-img-wrap">
-    <img src="/Arete3 mk.jpg"
-         data-title="Lux Furniture"
-         data-cat="Web Application"
-         data-url="https://luxfurnitures.vercel.app/"
-         alt="Lux Furniture"
-         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="overlay">
-      <i class="fas fa-external-link-alt"></i>
-      <span style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;margin-top:0.4rem;color:var(--gold)">View Site</span>
-    </div>
-  </div>
-  <div class="portfolio-info">
-    <div class="cat">Web Application</div>
-    <h4>Lux Furniture</h4>
-  </div>
-</div>
+        <div class="portfolio-card" onclick="window.open('https://luxfurnitures.vercel.app/')">
+          <div class="portfolio-img-wrap">
+            <img src="/Arete3 mk.jpg" data-title="Lux Furniture" data-cat="Web Application"
+              data-url="https://luxfurnitures.vercel.app/" alt="Lux Furniture"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="overlay">
+              <i class="fas fa-external-link-alt"></i>
+              <span
+                style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;margin-top:0.4rem;color:var(--gold)">View
+                Site</span>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <div class="cat">Web Application</div>
+            <h4>Lux Furniture</h4>
+          </div>
+        </div>
 
         <!-- Portfolio Card 3 -->
-            <div class="portfolio-card" onclick="window.open('https://b2c.mercurjs.com/pl')">
-  <div class="portfolio-img-wrap">
-    <img src="/fleekb2c.png"
-         data-title="Lux Furniture"
-         data-cat="Web Application"
-         data-url="https://b2c.mercurjs.com/pl"
-         alt="Fleek"
-         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="overlay">
-      <i class="fas fa-external-link-alt"></i>
-      <span style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;margin-top:0.4rem;color:var(--gold)">View Site</span>
-    </div>
-  </div>
-  <div class="portfolio-info">
-    <div class="cat">E-commerce Application</div>
-    <h4>Fleek</h4>
-  </div>
-</div>
+        <div class="portfolio-card" onclick="window.open('https://b2c.mercurjs.com/pl')">
+          <div class="portfolio-img-wrap">
+            <img src="/fleekb2c.png" data-title="Lux Furniture" data-cat="Web Application"
+              data-url="https://b2c.mercurjs.com/pl" alt="Fleek"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="overlay">
+              <i class="fas fa-external-link-alt"></i>
+              <span
+                style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;margin-top:0.4rem;color:var(--gold)">View
+                Site</span>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <div class="cat">E-commerce Application</div>
+            <h4>Fleek</h4>
+          </div>
+        </div>
 
         <!-- Portfolio Card 4 -->
-            <div class="portfolio-card" onclick="window.open('https://weatherapp-eta-pied.vercel.app/')">
-  <div class="portfolio-img-wrap">
-    <img src="/weatherapp.png"
-         data-title="Weather App"
-         data-cat="Web Application"
-         data-url="https://weatherapp-eta-pied.vercel.app/"
-         alt="Weather App"
-         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="overlay">
-      <i class="fas fa-external-link-alt"></i>
-      <span style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;margin-top:0.4rem;color:var(--gold)">View Site</span>
-    </div>
-  </div>
-  <div class="portfolio-info">
-    <div class="cat">Web Application</div>
-    <h4>Weather App</h4>
-  </div>
-</div>
+        <div class="portfolio-card" onclick="window.open('https://weatherapp-eta-pied.vercel.app/')">
+          <div class="portfolio-img-wrap">
+            <img src="/weatherapp.png" data-title="Weather App" data-cat="Web Application"
+              data-url="https://weatherapp-eta-pied.vercel.app/" alt="Weather App"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="overlay">
+              <i class="fas fa-external-link-alt"></i>
+              <span
+                style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;margin-top:0.4rem;color:var(--gold)">View
+                Site</span>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <div class="cat">Web Application</div>
+            <h4>Weather App</h4>
+          </div>
+        </div>
 
         <!-- Portfolio Card 5 -->
-            <div class="portfolio-card" onclick="window.open('https://otizgit.github.io/Dictionary-App/')">
-  <div class="portfolio-img-wrap">
-    <img src="/dictionary.png"
-         data-title="Dictionary App"
-         data-cat="Web Application"
-         data-url="https://otizgit.github.io/Dictionary-App/"
-         alt="Dictionary App"
-         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="overlay">
-      <i class="fas fa-external-link-alt"></i>
-      <span style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;margin-top:0.4rem;color:var(--gold)">View Site</span>
-    </div>
-  </div>
-  <div class="portfolio-info">
-    <div class="cat">Web Application</div>
-    <h4>Dictionary App</h4>
-  </div>
-</div>
+        <div class="portfolio-card" onclick="window.open('https://otizgit.github.io/Dictionary-App/')">
+          <div class="portfolio-img-wrap">
+            <img src="/dictionary.png" data-title="Dictionary App" data-cat="Web Application"
+              data-url="https://otizgit.github.io/Dictionary-App/" alt="Dictionary App"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="overlay">
+              <i class="fas fa-external-link-alt"></i>
+              <span
+                style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;margin-top:0.4rem;color:var(--gold)">View
+                Site</span>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <div class="cat">Web Application</div>
+            <h4>Dictionary App</h4>
+          </div>
+        </div>
 
 
         <!-- Portfolio Card 6 -->
-            <div class="portfolio-card" onclick="window.open('https://excellence.vercel.app/')">
-  <div class="portfolio-img-wrap">
-    <img src="/excellence.png"
-         data-title="Excellence Academy"
-         data-cat="Web Application"
-         data-url="https://excellence.vercel.app/"
-         alt="Excellence Academy"
-         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="overlay">
-      <i class="fas fa-external-link-alt"></i>
-      <span style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;margin-top:0.4rem;color:var(--gold)">View Site</span>
-    </div>
-  </div>
-  <div class="portfolio-info">
-    <div class="cat">Web Application</div>
-    <h4>Excellence Academy</h4>
-  </div>
-</div>
+        <div class="portfolio-card" onclick="window.open('https://excellence.vercel.app/')">
+          <div class="portfolio-img-wrap">
+            <img src="/excellence.png" data-title="Excellence Academy" data-cat="Web Application"
+              data-url="https://excellence.vercel.app/" alt="Excellence Academy"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="overlay">
+              <i class="fas fa-external-link-alt"></i>
+              <span
+                style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;margin-top:0.4rem;color:var(--gold)">View
+                Site</span>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <div class="cat">Web Application</div>
+            <h4>Excellence Academy</h4>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -2063,6 +2152,25 @@
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeLightbox({ target: document.getElementById('lightbox') });
     });
+
+    // Mobile Menu Toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+      });
+
+      // Close menu when a link is clicked
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('active');
+          navLinks.classList.remove('active');
+        });
+      });
+    }
   </script>
 </body>
 
